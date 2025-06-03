@@ -1,5 +1,5 @@
 /**
- * List item data.
+ * 列表项数据.
  */
 export class ListItemData {
   /**
@@ -16,4 +16,10 @@ export class ListItemData {
    * Arrow image.
    */
   imageArrow: Resource;
+
+  constructor(title: Resource, summary: Resource, imageArrow: Resource) {
+    this.title = title;
+    this.summary = summary;
+    this.imageArrow = imageArrow;
+  }
 }

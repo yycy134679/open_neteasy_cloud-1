@@ -1,7 +1,7 @@
 import type { ListItemData } from './ListItemData';
 
 /**
- * Category item information.
+ * 分类项信息
  */
 export class Category {
 
@@ -14,4 +14,9 @@ export class Category {
    * Category content(a list).
    */
   categoryContent: Array<ListItemData>;
+
+  constructor(title: Resource, categoryContent: Array<ListItemData>) {
+    this.title = title;
+    this.categoryContent = categoryContent;
+  }
 }
