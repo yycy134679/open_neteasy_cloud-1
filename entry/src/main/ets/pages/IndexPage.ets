@@ -155,7 +155,7 @@ struct IndexPage {
               .height(56)
               .margin({right:12})
             Column(){
-              Text('linwu-hi喜欢的音乐')
+              Text('云烟成雨喜欢的音乐')
                 .fontSize(14)
                 .fontColor('#000')
               Text('14首')
