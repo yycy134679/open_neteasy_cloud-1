@@ -3,7 +3,7 @@ import { Category } from '../common/bean/Category';
 import { ListItemData } from '../common/bean/ListItemData';
 
 /**
- * Category list page view model.
+ * 分类列表页面视图模型。
  */
 class PageViewModel {
   /**
@@ -14,9 +14,10 @@ class PageViewModel {
   getCategoryData(): Array<Category> {
     let categoryData: Array<Category> = [];
     for (let i = 0; i < CommonConstants.CATEGORY_CONTENT_LIST_SIZE; i++) {
-      let categoryItem = new Category();
-      categoryItem.title = $r('app.string.sub_title');
-      categoryItem.categoryContent = this.getListData(i + CommonConstants.CATEGORY_INCREMENTAL_STEP);
+      let categoryItem = new Category(
+        $r('app.string.sub_title'),
+        this.getListData(i + CommonConstants.CATEGORY_INCREMENTAL_STEP)
+      );
       categoryData.push(categoryItem);
     }
     return categoryData;
@@ -31,10 +32,11 @@ class PageViewModel {
   private getListData(itemSize: number): Array<ListItemData> {
     let listData: Array<ListItemData> = [];
     for (let i = 0; i < itemSize; i++) {
-      let listItem = new ListItemData();
-      listItem.title = $r('app.string.list_item_title');
-      listItem.summary = $r('app.string.list_item_summary');
-      listItem.imageArrow = $r('app.media.ic_right_arrow');
+      let listItem = new ListItemData(
+        $r('app.string.list_item_title'),
+        $r('app.string.list_item_summary'),
+        $r('app.media.ic_right_arrow')
+      );
       listData.push(listItem);
     }
     return listData;
@@ -48,9 +50,11 @@ class PageViewModel {
   getDetailData(): Array<ListItemData> {
     let detailData: Array<ListItemData> = [];
     for (let i = 0; i < CommonConstants.DETAIL_PAGE_LIST_SIZE; i++) {
-      let detailItem = new ListItemData();
-      detailItem.title = $r('app.string.page_title');
-      detailItem.summary = $r('app.string.list_item_summary');
+      let detailItem = new ListItemData(
+        $r('app.string.page_title'),
+        $r('app.string.list_item_summary'),
+        $r('app.media.ic_right_arrow')
+      );
       detailData.push(detailItem);
     }
     return detailData;

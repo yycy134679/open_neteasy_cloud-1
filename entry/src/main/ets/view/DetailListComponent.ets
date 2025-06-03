@@ -3,7 +3,7 @@ import type { ListItemData } from '../common/bean/ListItemData';
 import CategoryModel from '../viewmodel/PageViewModel';
 
 /**
- * This is the general detail page component that can add multiple items to the list.
+ * 这是通用的详情页组件，可向列表中添加多项内容。
  */
 @Component
 export struct DetailListComponent {
@@ -24,7 +24,7 @@ export struct DetailListComponent {
             .width(CommonConstants.ROW_WIDTH_PERCENT)
             .height($r('app.float.list_item_height'))
           }
-        }, (listItemData, index) => index + JSON.stringify(listItemData));
+        }, (listItemData: ListItemData, index: number) => index + JSON.stringify(listItemData));
       }
       .divider({
         strokeWidth: $r('app.float.divider_height'),

@@ -3,11 +3,11 @@ import { CommonConstants } from '../common/constants/CommonConstants';
 import { ListItemData } from '../common/bean/ListItemData';
 
 /**
- * This is the list of category item.
+ * 这是分类项目的清单
  */
 @Component
 export struct CategoryComponent {
-  private listData: Array<ListItemData>;
+  private listData: Array<ListItemData> = [];
 
   build() {
     Column() {
@@ -41,7 +41,7 @@ export struct CategoryComponent {
               });
             })
           }
-        }, (listItemData, index) => index + JSON.stringify(listItemData));
+        }, (listItemData: ListItemData, index: number) => index + JSON.stringify(listItemData));
       }
       .divider({
         strokeWidth: $r('app.float.divider_height'),
