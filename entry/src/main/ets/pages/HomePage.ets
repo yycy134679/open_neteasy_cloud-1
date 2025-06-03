@@ -3,7 +3,7 @@ import { CommonConstants } from '../common/constants/CommonConstants';
 import { DetailListComponent } from '../view/DetailListComponent';
 
 /**
- * 详情页用于展示更多信息。
+ * 登录页面
  */
 @Entry
 @Component
