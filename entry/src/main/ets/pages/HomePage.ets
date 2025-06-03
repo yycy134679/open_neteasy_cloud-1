@@ -3,7 +3,7 @@ import { CommonConstants } from '../common/constants/CommonConstants';
 import { DetailListComponent } from '../view/DetailListComponent';
 
 /**
- * Detail page to display more information.
+ * 详情页用于展示更多信息。
  */
 @Entry
 @Component
@@ -12,7 +12,8 @@ struct HomePage {
 
   aboutToAppear() {
     if (router.getParams()) {
-      this.titleParam = router.getParams()[CommonConstants.KEY_PARAM_DATA] as Resource;
+      const params = router.getParams() as Record<string, Object>;
+      this.titleParam = params.data as Resource;
     }
   }
 
