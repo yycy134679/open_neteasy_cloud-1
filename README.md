@@ -1,11 +1,10 @@
-# 网易云音乐
-🎅❄️🎶 鸿蒙 ArkTS 仿网易云音乐项目
+# 鸿蒙音乐播放器
+🎅❄️🎶 鸿蒙 ArkTS 音乐播放器项目
 
-### 鸿蒙ArkTs仿网易云音乐
+### 鸿蒙ArkTs音乐播放器
 
-一个使用华为鸿蒙 ArkTS 开发的网易云音乐仿制应用，适合作为鸿蒙开发学习和课程设计项目。
+一个使用华为鸿蒙 ArkTS 开发的音乐播放应用，采用本地模拟数据，适合作为鸿蒙开发学习和课程设计项目。
 
-- [api来源](https://github.com/Binaryify/NeteaseCloudMusicApi)
 - [源码地址](https://github.com/linwu-hi/open_neteasy_cloud)
 
 ## 🎯 项目特色
@@ -53,6 +52,7 @@
 - **开发工具**: DevEco Studio
 - **数据管理**: 本地模拟数据 + Preferences 存储
 - **音频播放**: AVPlayer API (计划中)
+- **数据来源**: 完全本地化，无需外部 API 依赖
 
 ### 项目结构
 ```
@@ -85,7 +85,7 @@ entry/src/main/ets/
 
 ### 环境要求
 - DevEco Studio 4.0+
-- HarmonyOS SDK API 9+
+- HarmonyOS SDK API 12
 - Node.js 16+
 
 ### 运行项目
@@ -102,9 +102,11 @@ git clone https://github.com/linwu-hi/open_neteasy_cloud.git
 
 ### 开发建议
 - 查看 `docs/development-plan.md` 了解详细的开发计划
-- 使用 `MockDataService` 获取测试数据
+- 使用 `MockDataService` 获取丰富的模拟数据
 - 遵循 ArkTS 开发规范
 - 参考现有组件进行功能扩展
+- 专注于 UI/UX 设计和用户体验优化
+- 可以添加本地音频文件支持
 
 ## 📊 项目亮点
 
@@ -119,6 +121,8 @@ git clone https://github.com/linwu-hi/open_neteasy_cloud.git
 - ✅ 丰富的模拟数据支持
 - ✅ 可扩展的服务层架构
 - ✅ 响应式的用户界面设计
+- ✅ 完全本地化，无网络依赖
+- ✅ 数据安全，无版权风险
 
 ### 学习价值
 - 🎓 适合鸿蒙开发入门学习
@@ -138,10 +142,12 @@ git clone https://github.com/linwu-hi/open_neteasy_cloud.git
 ### 开发计划
 - [ ] 完善音乐播放功能
 - [ ] 添加歌单详情页面
-- [ ] 实现搜索功能
+- [ ] 实现本地搜索功能
 - [ ] 优化用户界面和交互
 - [ ] 添加主题切换功能
 - [ ] 完善数据持久化
+- [ ] 支持本地音频文件播放
+- [ ] 添加音效和均衡器设置
 
 ## 📄 许可证
 
