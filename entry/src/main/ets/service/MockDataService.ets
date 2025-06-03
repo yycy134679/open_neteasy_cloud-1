@@ -91,8 +91,8 @@ export class MockDataService {
    * 获取模拟歌单数据
    */
   static getMockPlaylists(): Playlist[] {
-    const songs = this.getMockSongs();
-    
+    const songs = MockDataService.getMockSongs();
+
     return [
       new Playlist(
         'playlist_1',
@@ -141,31 +141,31 @@ export class MockDataService {
    * 获取推荐歌单
    */
   static getRecommendedPlaylists(): Playlist[] {
-    return this.getMockPlaylists().slice(1, 4);
+    return MockDataService.getMockPlaylists().slice(1, 4);
   }
 
   /**
    * 获取用户创建的歌单
    */
   static getUserPlaylists(): Playlist[] {
-    return this.getMockPlaylists().filter(playlist => !playlist.isSystem);
+    return MockDataService.getMockPlaylists().filter(playlist => !playlist.isSystem);
   }
 
   /**
    * 获取系统歌单
    */
   static getSystemPlaylists(): Playlist[] {
-    return this.getMockPlaylists().filter(playlist => playlist.isSystem);
+    return MockDataService.getMockPlaylists().filter(playlist => playlist.isSystem);
   }
 
   /**
    * 根据关键词搜索歌曲
    */
   static searchSongs(keyword: string): Song[] {
-    const songs = this.getMockSongs();
+    const songs = MockDataService.getMockSongs();
     const lowerKeyword = keyword.toLowerCase();
-    
-    return songs.filter(song => 
+
+    return songs.filter(song =>
       song.title.toLowerCase().includes(lowerKeyword) ||
       song.artist.toLowerCase().includes(lowerKeyword) ||
       song.album.toLowerCase().includes(lowerKeyword)
@@ -176,7 +176,7 @@ export class MockDataService {
    * 根据ID获取歌曲
    */
   static getSongById(id: string): Song | null {
-    const songs = this.getMockSongs();
+    const songs = MockDataService.getMockSongs();
     return songs.find(song => song.id === id) || null;
   }
 
@@ -184,7 +184,7 @@ export class MockDataService {
    * 根据ID获取歌单
    */
   static getPlaylistById(id: string): Playlist | null {
-    const playlists = this.getMockPlaylists();
+    const playlists = MockDataService.getMockPlaylists();
     return playlists.find(playlist => playlist.id === id) || null;
   }
 
@@ -192,7 +192,7 @@ export class MockDataService {
    * 获取热门歌曲
    */
   static getPopularSongs(): Song[] {
-    return this.getMockSongs()
+    return MockDataService.getMockSongs()
       .sort((a, b) => b.playCount - a.playCount)
       .slice(0, 10);
   }
@@ -201,6 +201,6 @@ export class MockDataService {
    * 获取收藏的歌曲
    */
   static getFavoriteSongs(): Song[] {
-    return this.getMockSongs().filter(song => song.isFavorite);
+    return MockDataService.getMockSongs().filter(song => song.isFavorite);
   }
 }

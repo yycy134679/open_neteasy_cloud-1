@@ -20,6 +20,14 @@ export enum PlayState {
 }
 
 /**
+ * 时间更新数据接口
+ */
+interface TimeUpdateData {
+  currentTime: number;
+  duration: number;
+}
+
+/**
  * 音乐播放服务
  * 管理音乐播放的核心逻辑
  */
@@ -91,10 +99,10 @@ export class MusicPlayerService {
   /**
    * 触发事件
    */
-  private emit(event: string, data?: any): void {
+  private emit(event: string, data?: Object): void {
     const callbacks = this.listeners.get(event);
     if (callbacks) {
-      callbacks.forEach(callback => callback(data));
+      callbacks.forEach((callback: Function): void => callback(data));
     }
   }
 
@@ -243,10 +251,11 @@ export class MusicPlayerService {
    */
   seekTo(time: number): void {
     this._currentTime = Math.max(0, Math.min(time, this._duration));
-    this.emit('timeUpdate', {
+    const timeData: TimeUpdateData = {
       currentTime: this._currentTime,
       duration: this._duration
-    });
+    };
+    this.emit('timeUpdate', timeData);
   }
 
   /**
@@ -260,10 +269,11 @@ export class MusicPlayerService {
         if (this._currentTime >= this._duration) {
           this.next(); // 自动播放下一首
         } else {
-          this.emit('timeUpdate', {
+          const timeData: TimeUpdateData = {
             currentTime: this._currentTime,
             duration: this._duration
-          });
+          };
+          this.emit('timeUpdate', timeData);
         }
       }
     }, 1000);
